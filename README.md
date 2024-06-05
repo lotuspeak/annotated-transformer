@@ -66,3 +66,33 @@ make flake
 (or manually call flake8 `flake8 --show-source the_annotated_transformer.py) to check for PEP8 violations.
 
 It's recommended to run these two commands and fix any flake8 errors that arise, when submitting a PR, otherwise the github actions CI will report an error.
+
+# mark
+## 1 python -m pip install 'spacy~=3.2.6'
+
+## 2  multi30k url changed
+Plus, besides commenting the previous URL, you also need to change the MD5 in torchtext/datasets/multi30k.py （pkg: torchtext）.
+
+    # URL = {
+    #     'train': r'http://www.quest.dcs.shef.ac.uk/wmt16_files_mmt/training.tar.gz',
+    #     'valid': r'http://www.quest.dcs.shef.ac.uk/wmt16_files_mmt/validation.tar.gz',
+    #     'test': r'http://www.quest.dcs.shef.ac.uk/wmt16_files_mmt/mmt16_task1_test.tar.gz',
+    # }
+    # 
+    # MD5 = {
+    #     'train': '20140d013d05dd9a72dfde46478663ba05737ce983f478f960c1123c6671be5e',
+    #     'valid': 'a7aa20e9ebd5ba5adce7909498b94410996040857154dab029851af3a866da8c',
+    #     'test': '0681be16a532912288a91ddd573594fbdd57c0fbb81486eff7c55247e35326c2',
+    # }
+
+    URL = {
+        "train": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/training.tar.gz",
+        "valid": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/validation.tar.gz",
+        "test": r"https://raw.githubusercontent.com/neychev/small_DL_repo/master/datasets/Multi30k/mmt16_task1_test.tar.gz",
+    }
+
+    MD5 = {
+        "train": "20140d013d05dd9a72dfde46478663ba05737ce983f478f960c1123c6671be5e",
+        "valid": "a7aa20e9ebd5ba5adce7909498b94410996040857154dab029851af3a866da8c",
+        "test": "6d1ca1dba99e2c5dd54cae1226ff11c2551e6ce63527ebb072a1f70f72a5cd36",
+    }
