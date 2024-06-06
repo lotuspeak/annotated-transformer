@@ -14,7 +14,9 @@ http://nlp.seas.harvard.edu/annotated-transformer/
 Use `requirements.txt` to install library dependencies with pip:
 
 ```
-pip install -r requirements.txt
+conda create --name annotated-transformer python=3.9 -y
+conda activate annotated-transformer
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 
@@ -96,3 +98,11 @@ Plus, besides commenting the previous URL, you also need to change the MD5 in to
         "valid": "a7aa20e9ebd5ba5adce7909498b94410996040857154dab029851af3a866da8c",
         "test": "6d1ca1dba99e2c5dd54cae1226ff11c2551e6ce63527ebb072a1f70f72a5cd36",
     }
+
+    可直接下载文件到 ~/.torchtext/cache/Multi30K/
+
+## 3 下载 en/de_core_web/news_sm
+https://github.com/explosion/spacy-models/releases?page=50
+  280  pip install en_core_web_sm-3.2.0.tar.gz 
+  281  pip install de_core_news_sm-3.2.0
+  282  pip install de_core_news_sm-3.2.0.tar.gz s
